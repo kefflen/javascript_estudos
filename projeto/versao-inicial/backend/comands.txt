@@ -1,0 +1,22 @@
+== BANCO DE DADOS POSTGRE ==
+
+Para abrir o banco de dados:
+	psql -U postgres
+	<password>
+
+para conectar ao banco de dados <name>
+	\c <name>
+
+== MANGODB ==
+Para abrir o sevidor do mangodb
+	mangod
+
+== KNEX ==
+codigos para criar knexfile.js:
+	knex init
+
+para criar migrates:
+	knex migrate:make <name_of_migrate>
+
+Para migrar:
+	knex migrate:latest

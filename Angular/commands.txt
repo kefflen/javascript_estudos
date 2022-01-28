@@ -1,0 +1,89 @@
+/Instalar backend com json-server
+    1.Criar uma pasta para o backend
+    2.Instalar json-server
+    3.Criar um arquivo 'db.json'
+    As entidades são chaves do obejeto json
+    e seu valor é um array contendo os obejetos
+
+    ex:
+        {
+            "users": [{
+                'id': 1,
+                'name': 'fulano'
+                'age': 20
+            },{
+                'id': 2,
+                'name': 'Anonimo'
+                'age': 23
+            }
+            ]
+        }
+    4.Criar o script no 'package.json'
+        'start': json-server --watch db.json --port 3001
+
+Para criar um projeto angular
+/instalar o 'cli angular'
+    > npm i -g @angular/cli
+
+/Para criar um projeto
+    > ng new <name>
+
+    Respostas:
+    [...] add Angular routing: y
+    which stylesheet [...]: css
+    /Pode usar a flag --minimal para tirar alguns arquivos desnecessarios
+        > ng new <name> --minimal
+    OBS: para funcionar precisei usar i prompt de comando msm
+
+/Para inicializar o projeto
+    1.Entrar no diretorio do projeto
+    > npm start
+
+/No arquivo 'angular.json'
+    mudar os atributos
+        'inlineTeplate' para false
+        'inlineStyle' para false
+    Para poder ter aquivos html, css e js separados
+    OBS: Consequencia do flag --minimal
+
+    2. Depois
+    Tirar o template o style de app.component
+    E criar 
+        'templateUrl' apontando para o arquivo html 
+
+/Instalar depedencia do 'material'
+    > ng add @angular/material
+
+    Respostas:
+    theme: qualquer
+    [...] typegraphy style: y
+    [...] animations: y
+
+/Para criar um component
+    > ng generate component
+    ou abreviado
+        > ng g c <pathWithComponentName>
+        ex: > ng g c components/template/header
+
+/Para usar modulos do material
+    1.Precisa importar o modulo no 'app.module.ts'
+    ex:
+        import { MatToolbarModule } from '@angular/material/toolbar
+    2.Depois colocar essa referenci em imports dentro de @NgModule
+
+    Agora so usar esse component em outro component
+
+/Para criar diretivas
+    > ng g d <pathWithName>
+
+/Para criar um service
+    > ng g s <pathWithName>
+
+
+
+
+
+
+
+
+

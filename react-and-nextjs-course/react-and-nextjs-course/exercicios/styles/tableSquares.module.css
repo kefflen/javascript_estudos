@@ -1,0 +1,29 @@
+
+
+.blackSquare {
+    background-color: #000;
+    display: inline-block;
+    height: 60px;
+    width: 60px;
+    margin: 0px;
+}
+
+.whiteSquare {
+    background-color: #fff;
+    display: inline-block;
+    height: 60px;
+    width: 60px;
+    margin: 0px;
+}
+
+.rowSquare {
+    margin: 0px;
+    padding: 0px;
+}
+
+.table {
+    border: solid;
+    display: inline-block;
+    padding: 0;
+    margin: 0px;
+}

@@ -1,0 +1,9 @@
+https://tailwindcss.com/docs/guides/nextjs
+
+Para colocar fontawesome
+https://dev.to/vuongddang/how-to-use-fontawesome-in-next-js-5bl5
+
+npm i --save @fortawesome/fontawesome-svg-core \
+             @fortawesome/free-solid-svg-icons \
+             @fortawesome/free-brands-svg-icons \
+             @fortawesome/react-fontawesome

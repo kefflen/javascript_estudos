@@ -1,0 +1,19 @@
+
+== Para instalar o react ==
+    npm i -g create-react-app
+
+== Para criar um novo projeto ==
+    create-react-app <projectName>
+
+== Para executar o projeto ==
+    npm start
+
+DEPEDENCIAS ---
+== Para rodar bootstrap ==
+    npm i bootstrap
+== Para navegar entre os componentes
+    npm i react-router
+    npm i react-router-dom
+---
+
+=== === === === === === === === === === ===

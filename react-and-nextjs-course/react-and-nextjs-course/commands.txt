@@ -1,0 +1,11 @@
+== Para criar um projeto ==
+    npx create-next-app <nameOfApp>
+
+== Para rodar o app em desenvolvimento ==
+    npm run dev
+
+== Para rodar typescript ==
+    obs: Aparece um alerta no quando inicia-se o 'npm run dev' 
+        se haver uma arquivo com o nome 'tsconfig.json'
+    npm install --save-dev @types/react
+

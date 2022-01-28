@@ -1,0 +1,46 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Arthur oliveira",
+      "email": "arthur@gmail.com",
+      "admin": false,
+      "password": 12345678
+    },
+    {
+      "id": 2,
+      "name": "Kefflen Moreno Ramos",
+      "email": "kefflenjava@gmail.com",
+      "admin": true,
+      "password": 12345678
+    },
+    {
+      "id": 3,
+      "name": "Juliana Barros",
+      "email": "juliana@gmail.com",
+      "admin": false,
+      "password": 12345678
+    },
+    {
+      "id": 4,
+      "name": "Paula Cintra",
+      "email": "paula@gmail.com",
+      "admin": false,
+      "password": 12345678
+    },
+    {
+      "id": 5,
+      "name": "Pedro Reis",
+      "email": "pedro@gmail.com",
+      "admin": false,
+      "password": 12345678
+    },
+    {
+      "id": 6,
+      "name": "Paulo Silva",
+      "email": "paulo@gmail.com",
+      "admin": false,
+      "password": 12345678
+    }
+  ]
+}

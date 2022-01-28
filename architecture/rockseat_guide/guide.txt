@@ -1,0 +1,10 @@
+Inicializando
+    npm i cors express
+    npm add typescript ts-node-dev -D
+    npx tsc --init
+    npm add types@express -D
+    yarn add uuidv4
+
+/Intalando nodemailer
+    yarn add nodemailer
+    yarn add @types/nodemailer -D

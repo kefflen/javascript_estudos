@@ -1,0 +1,28 @@
+DOCS:
+    https://tailwindcss.com/docs/guides/nextjs
+    /Para icones
+        https://heroicons.com/
+
+/Para installar typescript
+    criar file 'tsconfig.json'
+    npm install --save-dev @types/react
+    npm install --save-dev typescript
+
+/Para instalar Tailwind
+    npm install -D tailwindcss@latest postcss@latest autoprefixer@latest
+    /INICIALIZAR Tailwind:
+        npx tailwindcss init -p
+
+    /Mudar o arquivo taiwind.config.js
+        atributo 'purge' OBS: Como coloquei pages e components em src acrecentei 'srs' ao path
+        purge: ['./src/pages/**/*.{js,ts,jsx,tsx}', './src/components/**/*.{js,ts,jsx,tsx}'],
+
+    /Importar tailwindcss no arquivo _app.tsx
+        import 'tailwindcss/tailwind.css'
+
+/Para habilitar o modo dark
+    Mudar att 'darkmode' para 'media'/'class' no arquivo 'tailwind.config.js'
+    Com 'class' so precisa colocar o class 'dark' no parent para seus filhos entrar em darkmode
+    /Para colocar uma class tailwind do darkmode
+        dark:<classname>
+        ex: dark:bg-gray-800

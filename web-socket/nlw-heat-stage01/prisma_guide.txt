@@ -1,0 +1,10 @@
+//1:46
+
+Para fazer a migração
+  > npx prisma migrate dev
+
+Para que o typescript de reaload apos alterações. Quando tem prisma no projeto
+  Colocar --exit-child
+  {
+    dev: "tsnd --exit-child src/server.ts"
+  }
