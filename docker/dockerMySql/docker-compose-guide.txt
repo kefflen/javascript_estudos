@@ -1,0 +1,13 @@
+/Comfiguração docker-compose
+  --vesion
+    --build
+      É o local do dockerfile
+    --command
+      Comando para iniciar
+    --ports
+      Porta para redirecionar
+    --volumes
+      A pasta que sera monitorada
+
+/Depois de configurar tudo
+  > docker-compose up
