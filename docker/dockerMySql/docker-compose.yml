@@ -1,11 +1,16 @@
 services:
   app:
-    build: .
-    command: yarn start
+    build: . #Indica o diretorio do Dockerfile
+    command: npm start
+    restart: always # Se o container cair ele vai reiniciar
     ports:
       - '3000:3000'
     volumes:
-      - .:/usr/app
+      - .:/usr/app #. Oque sera copiado para : usr/app
+      #- ./dist:/usr/app teste não funcionou
+    links:
+      - mongo
+      - db
   db:
     container_name: 'database-node'
     image: mysql
@@ -17,5 +22,14 @@ services:
       - TZ=America/Sao_Paulo
     volumes:
       - my-db:/var/lib/mysql
+  mongo:
+    container_name: mongo-container
+    image: mongo
+    restart: always
+    volumes:
+      - ./data:/data/db
+    ports:
+      - 27018:27017
+    
 volumes:
   my-db:
