@@ -1,0 +1,21 @@
+
+services:
+  app:
+    build: .
+    command: npm start
+    restart: always
+    ports:
+      - 5050:5050
+    volumes:
+      - .:/usr/app
+  db:
+    container_name: 'database-mysql'
+    image: mysql
+    ports:
+      - 3307:3306
+    environment: 
+      - MYSQL_ROOT_PASSWORD=root
+    volumes:
+      - ./my-db:/var/lib/mysql
+    restart: always
+  
