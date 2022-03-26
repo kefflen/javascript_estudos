@@ -2,12 +2,18 @@ import 'reflect-metadata'
 import express, { NextFunction, Request, Response } from 'express'
 import 'express-async-errors'
 import mongoose from 'mongoose'
+import { graphqlHTTP } from 'express-graphql'
 
 const app = express()
 
 app.use(express.json())
 
 mongoose.connect("mongodb://localhost:27017/code_drops")
+
+app.use('/graphql', graphqlHTTP({
+  schema,
+  graphiql: true
+}))
 
 app.use(
   (error: Error, request: Request, response: Response, next: NextFunction) => {
