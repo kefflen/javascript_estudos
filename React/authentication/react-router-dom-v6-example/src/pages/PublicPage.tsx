@@ -1,5 +1,5 @@
-import React from "react";
+import React from "react"
 
 export default function PublicPage() {
-  return <h3>Public</h3>;
+  return <h3>Public</h3>
 }

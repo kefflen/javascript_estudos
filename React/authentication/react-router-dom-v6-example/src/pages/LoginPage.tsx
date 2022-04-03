@@ -1,19 +1,19 @@
-import React from "react";
-import { useNavigate, useLocation } from "react-router";
-import useAuth from "../hooks/useAuth";
+import React from "react"
+import { useNavigate, useLocation } from "react-router"
+import useAuth from "../hooks/useAuth"
 
 export default function LoginPage() {
-  let navigate = useNavigate();
-  let location = useLocation() as any;
-  let auth = useAuth();
+  let navigate = useNavigate()
+  let location = useLocation() as any
+  let auth = useAuth()
 
-  let from = location.state?.from?.pathname || "/";
+  let from = location.state?.from?.pathname || "/"
 
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
-    event.preventDefault();
+    event.preventDefault()
 
-    let formData = new FormData(event.currentTarget);
-    let username = formData.get("username") as string;
+    let formData = new FormData(event.currentTarget)
+    let username = formData.get("username") as string
 
     auth.signin(username, () => {
       // Send them back to the page they tried to visit when they were
@@ -22,8 +22,8 @@ export default function LoginPage() {
       // when they get to the protected page and click the back button, they
       // won't end up back on the login page, which is also really nice for the
       // user experience.
-      navigate(from, { replace: true });
-    });
+      navigate(from, { replace: true })
+    })
   }
 
   return (
@@ -37,5 +37,5 @@ export default function LoginPage() {
         <button type="submit">Login</button>
       </form>
     </div>
-  );
+  )
 }

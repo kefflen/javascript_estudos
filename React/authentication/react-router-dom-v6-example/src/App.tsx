@@ -1,6 +1,6 @@
-import * as React from "react";
-import AuthProvider from "./contexts/AuthContext";
-import AppRoutes from "./routes/AppRoutes";
+import * as React from "react"
+import AuthProvider from "./contexts/AuthContext"
+import AppRoutes from "./routes/AppRoutes"
 
 export default function App() {
   return (
@@ -28,7 +28,7 @@ export default function App() {
 
       <AppRoutes />
     </AuthProvider>
-  );
+  )
 }
 
 
