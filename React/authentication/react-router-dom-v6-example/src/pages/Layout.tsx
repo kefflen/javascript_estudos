@@ -1,7 +1,7 @@
 import React from "react";
 import { Outlet } from "react-router";
 import { Link } from "react-router-dom";
-import AuthStatus from "src/components/AuthStatus";
+import AuthStatus from "../components/AuthStatus";
 
 export default function Layout() {
   return (

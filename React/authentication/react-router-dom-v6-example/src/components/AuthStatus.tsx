@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router";
-import useAuth from "src/hooks/useAuth";
+import useAuth from "../hooks/useAuth";
 
 export default function AuthStatus() {
   let auth = useAuth();

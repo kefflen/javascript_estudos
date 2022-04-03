@@ -1,10 +1,10 @@
 import React from "react";
 import { Routes, Route, useLocation, Navigate } from "react-router";
-import useAuth from "src/hooks/useAuth";
-import Layout from "src/pages/Layout";
-import LoginPage from "src/pages/LoginPage";
-import ProtectedPage from "src/pages/ProtectedPage";
-import PublicPage from "src/pages/PublicPage";
+import useAuth from "../hooks/useAuth";
+import Layout from "../pages/Layout";
+import LoginPage from "../pages/LoginPage";
+import ProtectedPage from "../pages/ProtectedPage";
+import PublicPage from "../pages/PublicPage";
 
 export default function AppRoutes() {
   return (
