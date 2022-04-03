@@ -8,7 +8,7 @@ import {
   Navigate,
   Outlet,
 } from "react-router-dom";
-import { fakeAuthProvider } from "./auth";
+import AuthProvider, { AuthContext } from "./contexts/AuthContext";
 
 export default function App() {
   return (
@@ -71,35 +71,6 @@ function Layout() {
   );
 }
 
-interface AuthContextType {
-  user: any;
-  signin: (user: string, callback: VoidFunction) => void;
-  signout: (callback: VoidFunction) => void;
-}
-
-let AuthContext = React.createContext<AuthContextType>(null!);
-
-function AuthProvider({ children }: { children: React.ReactNode }) {
-  let [user, setUser] = React.useState<any>(null);
-
-  let signin = (newUser: string, callback: VoidFunction) => {
-    return fakeAuthProvider.signin(() => {
-      setUser(newUser);
-      callback();
-    });
-  };
-
-  let signout = (callback: VoidFunction) => {
-    return fakeAuthProvider.signout(() => {
-      setUser(null);
-      callback();
-    });
-  };
-
-  let value = { user, signin, signout };
-
-  return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
-}
 
 function useAuth() {
   return React.useContext(AuthContext);
@@ -144,7 +115,7 @@ function RequireAuth({ children }: { children: JSX.Element }) {
 
 function LoginPage() {
   let navigate = useNavigate();
-  let location = useLocation();
+  let location = useLocation() as any;
   let auth = useAuth();
 
   let from = location.state?.from?.pathname || "/";
