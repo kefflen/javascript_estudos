@@ -1,4 +1,4 @@
-#Iniciando o projeto GraphQL
+# Iniciando o projeto GraphQL, no backend
 
 ## Para iniciar o projeto
 ```cmd
@@ -13,4 +13,10 @@ npm i typescript @types/node ts-node-dev -D
   "experimentalDecorators": true,
   "emitDecoratorMetadata": true,
   "strictPropertyInitialization": false,
+```
+# Inciando o projeto react com Graphql
+
+# Para o projeto funcionar é necessario
+```cmd
+npm i @apollo/client graphql
 ```
