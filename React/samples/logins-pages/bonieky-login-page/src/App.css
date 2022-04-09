@@ -1,0 +1,26 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body, .App {
+  margin: 0px;
+}
+
+.App {
+  width: 100vw;
+  min-height: 100vh;
+}
+ 
+.App {
+  text-align: center;
+}
+
+nav a {
+  color: #000;
+
+}
+
+nav a:hover {
+  text-decoration: none;
+
+}
