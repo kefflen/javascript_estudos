@@ -2,7 +2,7 @@ import { LessonsRepository } from "../repositories/LessonsRepository";
 
 interface CreateLessonRequest {
   title: string,
-  description: string
+  description?: string
 }
 
 export class CreateLesson {
