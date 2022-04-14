@@ -11,6 +11,7 @@ export class CreateLesson {
   ) {}
 
   async execute({ title, description }: CreateLessonRequest) {
+    if (title.length === 0) throw Error("Invalid title")
     await this.lessonRepository.create({ title, description })
   }
 }
