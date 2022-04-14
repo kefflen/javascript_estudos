@@ -1,10 +1,19 @@
+import { InMemoryLessonsRepositor as InMemoryLessonsRepository } from "../../test/repositories/inMemoryLessonsRepository"
 import { CreateLesson } from "./CreateLesson"
 
 test('Create lesson', async () => {
-  const createLesson = new CreateLesson({
-    create: async (data) => {}
+  const inMemoryLessonsRepository = new InMemoryLessonsRepository()
+  const createLesson = new CreateLesson(inMemoryLessonsRepository)
+
+  createLesson.execute({
+    title: 'any_lesson'
   })
 
-  await expect(createLesson.execute({ title: 'any_lesson'}))
-    .resolves.not.toThrow()
+  expect(inMemoryLessonsRepository.items).toEqual(
+    expect.arrayContaining([
+      expect.objectContaining({
+        title: 'any_lesson'
+      })
+    ])
+  )
 })
