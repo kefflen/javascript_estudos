@@ -2,5 +2,6 @@ import jestConfig from "./jest.config";
 
 export default {
   ...jestConfig,
-   testRegex: '.e2e-spec.ts$', 
+  testEnvironment: './prisma/prisma-test-environment.ts',
+  testRegex: '.e2e-spec.ts$',
 }

@@ -10,7 +10,7 @@ dotenv.config({ path: '.env.testing' });
 
 const execSync = util.promisify(exec);
 
-const prismaBinary = './node_modules/.bin/prisma';
+const prismaBinary = '"./node_modules/.bin/prisma"';
 
 export default class PrismaTestEnvironment extends NodeEnvironment {
   private schema: string;

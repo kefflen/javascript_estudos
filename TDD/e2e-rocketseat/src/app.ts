@@ -1,11 +1,12 @@
 import express from 'express'
+import cors from 'cors'
 import { PrismaLessonRepository } from './repositories/prisma/PrismaLessonsRepository'
 import { CreateLesson } from './services/CreateLesson'
 const app = express()
 
 app.use(express.json)
-
-app.post('/lesson', async (request, response) => {
+app.use(cors())
+app.post('/lessons', async (request, response) => {
   const { title, description } = request.body
 
   const prismaLessonRepository = new PrismaLessonRepository()
