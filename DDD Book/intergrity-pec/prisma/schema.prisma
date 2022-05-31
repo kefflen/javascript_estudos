@@ -1,0 +1,26 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model Pec {
+  id String @id @default(uuid())
+  limit Float
+}
+
+model PieceBuy {
+  id String @id @default(uuid())
+  quantity Int
+  pieceName String
+  price Float
+  value Float
+}
+
+
