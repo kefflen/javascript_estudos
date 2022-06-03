@@ -1,0 +1,12 @@
+{
+  "name": "20220602",
+  "version": "1.0.0",
+  "description": "",
+  "main": "listFiles.js",
+  "scripts": {
+    "start": "node listFiles"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
