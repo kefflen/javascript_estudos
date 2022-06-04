@@ -1,26 +1,25 @@
 
-export interface IUnregisteredBuyedPiece {
+export interface BuyedPieceDTO {
+  readonly id: string
   readonly quantity: number
   readonly pieceName: string
   readonly price: number
   readonly value: number
 }
 
-export default class BuyedPiece implements IUnregisteredBuyedPiece {
-  #id!: string
-  #quantity!: number
-  #pieceName!: string
-  #price!: number
-  #value!: number
+export type IUnregisteredBuyedPiece = Omit<BuyedPieceDTO, 'id'>
 
-  constructor(
-    id: string,
-    pieceName: string,
-    price: number,
-    value: number,
-    quatity: number
-  ) {
-    this.quatity = quatity
+export default class BuyedPiece implements BuyedPieceDTO {
+  #id!: BuyedPieceDTO['id']
+  #quantity!: BuyedPieceDTO['quantity']
+  #pieceName!: BuyedPieceDTO['pieceName']
+  #price!: BuyedPieceDTO['price']
+  #value!: BuyedPieceDTO['value']
+
+  constructor({
+    quantity, price, value, pieceName, id
+  }: BuyedPieceDTO) {
+    this.quantity = quantity
     this.price = price
     this.value = value
     this.pieceName = pieceName
@@ -34,15 +33,18 @@ export default class BuyedPiece implements IUnregisteredBuyedPiece {
   set pieceName(value: string) {
     this.#pieceName = value
   }
+
   set price(value: number) {
     if (value < 0) throw Error("Invalid price")
     this.#price = value
   }
+
   set value(value: number) {
     if (value < 0) throw Error("Invalid value")
     this.#value = value
   }
-  set quatity(value: number) {
+
+  set quantity(value: number) {
     if (value < 0) throw Error("Invalid quantity")
     this.#quantity = value
   }

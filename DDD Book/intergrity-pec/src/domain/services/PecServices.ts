@@ -1,6 +1,6 @@
-import { IUnregisteredBuyedPiece } from "../entities/BuyedPiece";
-import { IUnregisteredPec } from "../entities/Pec";
-import IRepository from "../repositories/IRepositories";
+import { IUnregisteredBuyedPiece } from "../entities/BuyedPiece"
+import Pec, { IUnregisteredPec, PecDTO } from "../entities/Pec"
+import IRepository from "../repositories/IRepositories"
 
 export default class PecService {
     private readonly repositories: IRepository
@@ -9,7 +9,7 @@ export default class PecService {
     ) {
         this.repositories = repositories
     }
-    
+
     async create(limit: number, itens: IUnregisteredBuyedPiece[]) {
         const { pecRepository } = this.repositories
         const pecModel: IUnregisteredPec = {
@@ -18,5 +18,20 @@ export default class PecService {
         }
         const pec = await pecRepository.create(pecModel)
         return pec
+    }
+
+    async getPecs() {
+        return await this.repositories.pecRepository.getAll()
+    }
+
+    async update(pecDTO: PecDTO) {
+        const { pecRepository } = this.repositories
+        const { id } = pecDTO
+        const isBlocked = await pecRepository.isBlocked(id)
+        if (isBlocked) throw Error('Cannot update')
+
+        const pec = new Pec(pecDTO)
+        const createdPec = await pecRepository.update(pec)
+        return createdPec
     }
 }

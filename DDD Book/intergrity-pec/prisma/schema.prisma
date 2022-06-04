@@ -13,6 +13,9 @@ datasource db {
 model Pec {
   id String @id @default(uuid())
   limit Float
+  
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }
 
 model PieceBuy {
@@ -21,6 +24,9 @@ model PieceBuy {
   pieceName String
   price Float
   value Float
+  
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }
 
 
