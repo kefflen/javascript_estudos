@@ -1,5 +1,5 @@
-import Pec from "../entities/Pec";
+import Pec, { IUnregisteredPec } from "../entities/Pec";
 
 export default interface IPecRepository {
-  create(pec: Pec): Awaited<Promise<Pec>>
+  create(pec: IUnregisteredPec): Awaited<Promise<Pec>>
 }

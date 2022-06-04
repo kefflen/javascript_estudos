@@ -1,4 +1,9 @@
-import BuyedPiece, { IBuyedPiece } from "./BuyedPiece";
+import BuyedPiece, { IUnregisteredBuyedPiece } from "./BuyedPiece";
+
+export interface IUnregisteredPec {
+    limit: number
+    itens: IUnregisteredBuyedPiece[]
+}
 
 export default class Pec {
     #itens!: BuyedPiece[]

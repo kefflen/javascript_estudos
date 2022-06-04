@@ -1,11 +1,12 @@
-export interface IBuyedPiece {
+
+export interface IUnregisteredBuyedPiece {
   readonly quantity: number
   readonly pieceName: string
   readonly price: number
   readonly value: number
 }
 
-export default class BuyedPiece implements IBuyedPiece {
+export default class BuyedPiece implements IUnregisteredBuyedPiece {
   #id!: string
   #quantity!: number
   #pieceName!: string
@@ -23,6 +24,7 @@ export default class BuyedPiece implements IBuyedPiece {
     this.price = price
     this.value = value
     this.pieceName = pieceName
+    this.id = id
   }
 
   set id(value: string) {
