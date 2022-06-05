@@ -26,8 +26,7 @@ export default class PecService {
 
     async update(pecDTO: PecDTO) {
         const { pecRepository } = this.repositories
-        const { id } = pecDTO
-        const isBlocked = await pecRepository.isBlocked(id)
+        const isBlocked = await pecRepository.isBlocked(pecDTO)
         if (isBlocked) throw Error('Cannot update')
 
         const pec = new Pec(pecDTO)
