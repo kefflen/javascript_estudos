@@ -37,4 +37,6 @@ model ReserveEntitie {
   entitieId String
   reservedAt DateTime @default(now())
   entitieName String
+
+  @@unique([entitieId, entitieName])
 }
