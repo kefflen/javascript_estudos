@@ -87,7 +87,7 @@ export default class PecRepository implements IPecRepository {
     };
   }
 
-  private async verifyIsBlockedById(pecId: string) {
+  private async verifyIsBlockedById(pecId: string, reserveId?: string) {
     const lastReserve = await db.reserveEntitie.findUnique({
       where: {
         entitieId_entitieName: {
@@ -98,6 +98,7 @@ export default class PecRepository implements IPecRepository {
 
     if (lastReserve) {
       const difference =  (Date.now() - lastReserve.reservedAt.getTime())/1000/60
+      if (reserveId === lastReserve.id) return true
       if (difference < 1) {
         return true
       }
