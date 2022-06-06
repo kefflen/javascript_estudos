@@ -53,8 +53,8 @@ export default class PecRepository implements IPecRepository {
     return pecs
   }
 
-  async isBlocked(pec: PecDTO): Promise<boolean> {
-    return this.verifyIsBlockedById(pec.id)
+  async isBlocked(pec: PecDTO, reserveId = ''): Promise<boolean> {
+    return this.verifyIsBlockedById(pec.id, reserveId)
   }
   
   async update(pec: Pec): Promise<Pec> {
@@ -98,12 +98,12 @@ export default class PecRepository implements IPecRepository {
 
     if (lastReserve) {
       const difference =  (Date.now() - lastReserve.reservedAt.getTime())/1000/60
-      if (reserveId === lastReserve.id) return true
-      if (difference < 1) {
-        return true
+      if (reserveId === lastReserve.id) return false
+      if (difference > 1) {
+        return false
       }
     }
-    return false
+    return true
   }
 
 }
