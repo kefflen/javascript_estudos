@@ -48,6 +48,7 @@ function onError(error) {
 
 
 export default function BasicLexical() {
+
   const initialConfig = {
     namespace: 'MyEditor',
     theme,
