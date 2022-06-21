@@ -1,14 +1,14 @@
 import { createCommand, DecoratorNode } from "lexical";
 
 
-export default class VideoNode extends DecoratorNode {
+export default class ImgDecorator extends DecoratorNode {
  
   static getType() {
     return 'video'
   }
 
   static clone(node) {
-    return new VideoNode(node._url, node.key)
+    return new ImgDecorator(node._url, node.key)
   }
   
   constructor(url, key) {
@@ -18,10 +18,12 @@ export default class VideoNode extends DecoratorNode {
 
   createDOM(config) {
     console.log('createDom')
-    const span = document.createElement('span')
-    // span.style.display = 'content'
-    span.style.color = 'indigo'
-    return span
+    const img = document.createElement('img')
+    // img.style.display = 'content'
+    img.style.height = '30px'
+    img.style.color = 'indigo'
+    img.src = 'https://github.com/kefflen.png'
+    return img
   }
 
   updateDOM() {
@@ -36,17 +38,17 @@ export default class VideoNode extends DecoratorNode {
   decorate(editor) {
     console.log('decorate')
     console.log(this)
-    return <span>Video</span>
+    return <img  src="https://github.com/kefflen.png" />
   }
 }
 
-export function $createVideoNode(url) {
+export function $createImageNode(url) {
   console.log('createVideoNode')
-  return new VideoNode(url)
+  return new ImgDecorator(url)
 }
 
-export function $isVideoNode(node) {
+export function $isImageNode(node) {
   console.log('isVideo')
-  return node instanceof VideoNode
+  return node instanceof ImgDecorator
 }
 

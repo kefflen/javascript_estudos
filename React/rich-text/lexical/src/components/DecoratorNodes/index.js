@@ -6,7 +6,7 @@ import { $getSelection, createCommand } from "lexical";
 import { useEffect } from "react";
 import styled from "styled-components";
 
-import VideoNode, { $createVideoNode } from "./Nodes/VideoNode";
+import ImgDecorator, { $createImageNode } from "./Nodes/VideoNode";
 
 const Container = styled.div`
   margin: 2rem;
@@ -15,27 +15,27 @@ const Container = styled.div`
 `
 
 const initialConfig = {
-  namespace: 'MyEditorVideoDecorated',
+  namespace: 'MyEditorImageDecorated',
   theme: {},
-  nodes: [VideoNode],
+  nodes: [ImgDecorator],
   onError(e) {
     console.log(e)
   }
 };
 
-const INSERT_VIDEO_COMMAND = createCommand()
-function VideoPlugin() {
+const INSERT_IMAGE_COMMAND = createCommand()
+function ImagePlugin() {
   const [editor] = useLexicalComposerContext()
   
   useEffect(() => {
     const removeListen = editor.registerCommand(
-      INSERT_VIDEO_COMMAND,
+      INSERT_IMAGE_COMMAND,
       (payload) => {
         editor.update(() => {
           const selection = $getSelection()
           if (selection !== null) {
             const url = payload
-            selection.insertNodes([$createVideoNode(url)])
+            selection.insertNodes([$createImageNode(url)])
           }
         })
         return true
@@ -53,13 +53,13 @@ function VideoPlugin() {
 export default function DecoratorNodes() {
   return (
     <Container>
-      VideoDecorator
+      Image
       <hr />
       <LexicalComposer initialConfig={initialConfig}>
         <ToolBarVideoButton />
         <PlainTextPlugin contentEditable={<ContentEditable/>} 
           placeholder={'Escreva algo'}/>
-        <VideoPlugin />
+        <ImagePlugin />
       </LexicalComposer>
     </Container>
   )
@@ -69,8 +69,8 @@ export default function DecoratorNodes() {
 function ToolBarVideoButton() {
   const [editor] = useLexicalComposerContext()
   const insertVideo = url => {
-    editor.dispatchCommand(INSERT_VIDEO_COMMAND, url)
+    editor.dispatchCommand(INSERT_IMAGE_COMMAND, url)
   }
 
-  return <button onClick={() => insertVideo('random-link')}>Add video</button>
+  return <button onClick={() => insertVideo('https://www.youtube.com/watch?v=2alg7MQ6_sI')}>Add video</button>
 }
