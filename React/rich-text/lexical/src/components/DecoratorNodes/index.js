@@ -72,5 +72,5 @@ function ToolBarVideoButton() {
     editor.dispatchCommand(INSERT_VIDEO_COMMAND, url)
   }
 
-  return <button onClick={insertVideo}>Add video</button>
+  return <button onClick={() => insertVideo('random-link')}>Add video</button>
 }

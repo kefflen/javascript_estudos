@@ -13,7 +13,7 @@ export default class VideoNode extends DecoratorNode {
   
   constructor(url, key) {
     super(key)
-    this._url = url
+    this.__link = url
   }
 
   createDOM(config) {
@@ -30,11 +30,12 @@ export default class VideoNode extends DecoratorNode {
 
   setURL(url) {
     const writable = this.getWritable()
-    writable._url = url
+    writable.__link = url
   }
 
   decorate(editor) {
     console.log('decorate')
+    console.log(this)
     return <span>Video</span>
   }
 }
@@ -45,6 +46,7 @@ export function $createVideoNode(url) {
 }
 
 export function $isVideoNode(node) {
+  console.log('isVideo')
   return node instanceof VideoNode
 }
 
