@@ -72,5 +72,5 @@ function ToolBarVideoButton() {
     editor.dispatchCommand(INSERT_IMAGE_COMMAND, url)
   }
 
-  return <button onClick={() => insertVideo('https://www.youtube.com/watch?v=2alg7MQ6_sI')}>Add video</button>
+  return <button onClick={() => insertVideo('https://www.youtube.com/watch?v=2alg7MQ6_sI')}>Add Image</button>
 }
