@@ -1,6 +1,7 @@
 import BasicLexical from "./components/BasicLexical";
 import DecoratorNodes from "./components/DecoratorNodes";
 import Emoticon from "./components/Emoticon";
+import Markdown from "./components/Markdown";
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
       {/* <BasicLexical /> */}
       {/* <DecoratorNodes /> */}
       <Emoticon />
+      <Markdown />
     </div>
   );
 }
